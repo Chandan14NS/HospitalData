@@ -15,8 +15,9 @@ public class HospitalServiceImpl implements HospitalService{
 	HospitalRepository hospitalRepo;
 	
 	@Override
-	public void saveForm(Hospital hospital) {
-		hospitalRepo.save(hospital);
+	public Hospital saveForm(Hospital hospital) {
+		Hospital save = hospitalRepo.save(hospital);
+		return save;
 	}
 
 	@Override
@@ -26,7 +27,7 @@ public class HospitalServiceImpl implements HospitalService{
 	}
 
 	@Override
-	public void updateList(HospitalDto dto) {
+	public Hospital updateList(HospitalDto dto) {
 		Hospital hospital=new Hospital();
 		hospital.setId(dto.getId());
 		hospital.setFirstName(dto.getFirstName());
@@ -35,7 +36,8 @@ public class HospitalServiceImpl implements HospitalService{
 		hospital.setEmail(dto.getEmail());
 		hospital.setMobile(dto.getMobile());
 		hospital.setFees(dto.getFees());
-		hospitalRepo.save(hospital);	
+		Hospital updated = hospitalRepo.save(hospital);	
+		return updated;
 	}
 
 	@Override

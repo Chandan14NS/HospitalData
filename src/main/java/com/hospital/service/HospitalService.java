@@ -10,9 +10,9 @@ import com.hospital.entity.Hospital;
 
 @Service
 public interface HospitalService {
-	void saveForm(Hospital hospital);
+	Hospital saveForm(Hospital hospital);
 	List<Hospital> viewList();
-	void updateList(HospitalDto dto);
+	Hospital updateList(HospitalDto dto);
 	void deleteData(Long id);
 	Hospital findData(Long id);
 	
