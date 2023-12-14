@@ -1,6 +1,9 @@
 package com.hospital.controller;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -35,6 +38,7 @@ public class HospitalController {
 	@GetMapping("/viewlist")
 	public String viewList(Model model) {
 		List<Hospital> list = service.viewList();
+		
 		model.addAttribute("list",list);
 		return "list";
 	}

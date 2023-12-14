@@ -1,7 +1,6 @@
 package com.hospital.dto;
 
 
-
 public class HospitalDto {
 private long id;
 	
@@ -92,6 +91,5 @@ private long id;
 	public void setFees(float fees) {
 		this.fees = fees;
 	}
-	
 	
 }
